@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link href="/themes/light-matter/post-style.css" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 8]>
+    <link href="/themes/light-matter/ie-style.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <title>{PageTitle}</title>
+  </head>
+  <body>
+    <div id="header-container">
+      <div id="header">
+        {block:HeaderImage}
+        <a href="{BlogURL}" class="author-image"><img src="{HeaderImageURL}" alt="{Title}"/><span></span></a>
+        {/block:HeaderImage}
+        <h1 class="site-name"><a href="{BlogURL}">{Title}</a></h1>
+        <p class="site-description">{Description}</p>
+      </div>
+    </div>
+    {block:HasPages}
+    <div id="pages-container">
+      <div id="pages">
+        <ul>
+          {block:Pages}
+          <li><a href="{URL}" title="{Label}" class="{Current}">{Label}</a></li>
+          {/block:Pages}
+        </ul>
+      </div>
+    </div>
+    {/block:HasPages}
+    <div id="container">
+      <ul class="post-list clearfix">
+        {block:Posts}
+        <li class="post-item clearfix" id="post_{PostID}">
+        <div class="title-block">
+          {block:Title}
+          <h3 id="posttitle_{PostID}" class="title"><a href="{Permalink}">{Title}</a></h3>
+          {/block:Title}
+          {block:ShowOrList}
+          <ul class="meta">
+            <li class="date">{DayOfMonth} {ShortMonth} {Year}</li>
+            <li class="comments"><a href="{Permalink}" id="comment_link_{PostID}">{ResponseCount} Response{ResponseCountPluralized}</a></li>
+            <li class="views">{PostViews}&nbsp;views</li>
+            {block:TagList}
+            <li class="tags">
+            {block:TagListing}
+            <a href="{TagLink}">{TagName}</a>
+            {/block:TagListing}
+            </li>
+            {/block:TagList}
+          </ul>
+          {/block:ShowOrList}
+
+          <div class="editbox clearfix" id="editunit_{PostID}">
+            {block:EditBox}{EditBoxContents}{/block:EditBox}  
+          </div>
+
+        </div>
+        <div class="post-content" id="postbox_{PostID}">
+          <div class="copy">
+            {Body}
+            {block:Private/}
+          </div>
+
+          <ul class="social">
+            <li class="tweet">
+            {block:Tweet /}
+            </li>
+            <li class="like">
+            <fb:like href="{Permalink}" layout="button_count"></fb:like> 
+            </li>
+          </ul>
+
+          {block:Show}
+          {block:PostLocations}
+          <div class="column geolocation">
+            <h4>Posted from</h4>
+            {block:PostLocation uniq_by='summary'}    
+            {LocationSummary}
+            {/block:PostLocation}   
+            <div class="map">{MapIframe}</div>
+          </div>
+          {/block:PostLocations}
+          {/block:Show}
+        </div>    
+        {block:Show}
+        {block:Responses /}
+        {/block:Show}
+        </li>        
+        {/block:Posts}
+        <li class="pagination">
+        {block:Pagination/} 
+        </li>        
+      </ul>
+    </div>
+
+    <div id="footer-container">
+      <div id="footer">
+
+        <ul class="three-column clearfix">
+          <li class="column clearfix">
+          {block:List}
+          <h4>About</h4>
+          <p>{Profile}</p>
+          <div class="siteviews">{SiteViews} Views</div>
+          {/block:List}
+          {block:Show}
+          {block:Author}
+          <h4>{AuthorName}</h4>
+          {Profile}
+          {block:AuthorUser}
+          <p>Contributed by <a href="{AuthorURL}">{AuthorName}</a></p>
+          {/block:AuthorUser}
+          {/block:Author}
+          {/block:Show}
+          </li>
+          <li class="column">
+
+          {block:HasArchives}
+          <h4>Archive</h4>
+          <ul class="archive">
+            {block:ArchiveYear}
+            <li>
+            <a href="#" id="{ArchiveYearId}">{ArchiveDateYear}</a> <span>({ArchiveYearCount})</span>
+            <ul id="{ArchiveMonthsId}" style="display:none;">
+
+              {block:Archive}                              
+              <li class="inner"><a href="{ArchiveLink}">{ArchiveMonth} </a> <span>({ArchiveCount})</span></li>
+              {/block:Archive}
+
+            </ul>
+            </li>
+            {/block:ArchiveYear}
+          </ul>
+          {/block:HasArchives}
+
+          <h4>Get Updates</h4>
+          <div class="subscribe_to_mysite clearfix">
+            {block:Subscription}{/block:Subscription}
+
+            <div><a href="{RSS}" class="subscribe_link" target="_blank">Subscribe via RSS</a> </div>
+            <div class="social-bookmarks">
+              {ProfileExternalLinks}
+            </div>
+          </div>
+
+          </li>
+          <li class="column last">
+          {block:LinkCategories} 
+          <h4>{Label}</h4>
+          <ul>
+            {block:Links}
+            <li><a href="{URL}">{Label}</a></li>
+            {/block:Links}
+          </ul>
+          {/block:LinkCategories}
+
+          </li>
+        </ul>
+
+        <form method="get" class="search-form">
+          <input name="sort" type="hidden" value="{SearchSort}"/>
+          <input name="search" class="search" id="searchbox" type="text" value="{SearchQuery}" />
+          <input type="submit" value="Search" class="search_button" />
+        </form>
+        {block:SearchPage}
+        <ul>
+          {block:SearchResultOne}
+          <li>One result found<li>
+          {/block:SearchResultOne}
+
+          {block:SearchResultMany}
+          <li>{SearchResultCount} results found</li>
+          {/block:SearchResultMany}
+
+          {block:SearchResultNone}
+          <li>No results found</li>
+          {/block:SearchResultNone}
+          <li><strong>Sort Options</strong></li>
+          <li>
+          {block:SearchSortBestmatch}
+          <strong>Best match</strong>
+          {Else}
+          <a href="{CurrentURL}?search={SearchQuery}&sort=bestmatch">Best match</a>
+          {/block:SearchSortBestmatch}
+          </li>
+          <li>
+          {block:SearchSortRecent}
+          <strong>Most recent</strong>
+          {Else}
+          <a href="{CurrentURL}?search={SearchQuery}&sort=recent">Most recent</a>
+          {/block:SearchSortRecent}
+          </li>
+          <li>
+          {block:SearchSortInteresting}
+          <strong>Most interesting</strong>
+          {Else}
+          <a href="{CurrentURL}?search={SearchQuery}&sort=interesting">Most interesting</a>
+          {/block:SearchSortInteresting}
+          </li>
+        </ul>
+        {/block:SearchPage}
+
+      </div>
+    </div>
+
+  </body>
+</html>
