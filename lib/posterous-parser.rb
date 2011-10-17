@@ -12,7 +12,24 @@ class PosterousParser
     end
 
     def self.get_tags_only(template)
-      template.scan(/\{.*?\}/) # todo: escape the html
+      template.scan /\{.*?\}/ # todo: escape the html
     end
+
+    def self.is_opening_block?(tag)
+      tag =~ /\{block:[^\/]*?\}/ ? true : false
+    end
+
+    def self.is_closing_block?(tag)
+      tag =~ /\{\/block:.*?\}/ ? true : false
+    end
+
+    def self.is_one_tag_block?(tag)
+      tag =~ /\{block:.*?\/\}/ ? true : false
+    end
+
+    def self.is_element?(tag)
+      tag =~ /\{[^\/?block:].*?\}/ ? true : false
+    end
+
 
 end
