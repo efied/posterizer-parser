@@ -27,6 +27,10 @@ class PosterousParser
     parse_tree
   end
 
+  def self.is_root_node?(node)
+    node.parentage ? false : true
+  end
+
   def self.generate_node_path(node, tag)
     if is_root_node?(node)
       return ""
@@ -34,10 +38,6 @@ class PosterousParser
       # create the parentage string in a path format
       return node.parentage.map {|p_node| p_node.name}.reverse.join("/") + "/#{node.name}/#{tag}"
     end
-  end
-
-  def self.is_root_node?(node)
-    node.parentage ? false : true
   end
 
   def self.get_tags(template)
