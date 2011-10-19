@@ -5,7 +5,7 @@ class PosterousParser
 
   def self.parse(template)
     tags = get_tags(template)
-    template_tree = parse_into_tree(tags).print_tree
+    template_tree = parse_into_tree(tags)
   end
 
   def self.parse_into_tree(tags)
@@ -14,17 +14,26 @@ class PosterousParser
     current_node = parse_tree
     tags.each do |tag|
       if is_opening_block?(tag)
-        content = is_root_node?(current_node) ? "" : current_node.parentage.map {|p_node| p_node.name}.reverse.join("/") + "/#{current_node.name}/" + tag
+        content = generate_node_path(current_node, tag)
         current_node << TreeNode.new(tag, content)
         current_node = current_node[tag]
       elsif is_closing_block?(tag)
         current_node = current_node.parent
       else
-        content = is_root_node?(current_node) ? "" : current_node.parentage.map {|p_node| p_node.name}.reverse.join("/") + "/#{current_node.name}/" + tag
+        content = generate_node_path(current_node, tag)
         current_node << TreeNode.new(tag, content)
       end
     end
     parse_tree
+  end
+
+  def self.generate_node_path(node, tag)
+    if is_root_node?(node)
+      return ""
+    else
+      # create the parentage string in a path format
+      return node.parentage.map {|p_node| p_node.name}.reverse.join("/") + "/#{node.name}/#{tag}"
+    end
   end
 
   def self.is_root_node?(node)
