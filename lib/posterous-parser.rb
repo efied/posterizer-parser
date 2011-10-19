@@ -1,4 +1,4 @@
-require 'tree.rb'
+require File.join("#{File.dirname(__FILE__)}", "..", "vendor", "lib", "tree.rb")
 include Tree
 
 class PosterousParser
@@ -10,19 +10,25 @@ class PosterousParser
 
   def self.parse_into_tree(tags)
     # some sweet tree action
-    parse_tree = TreeNode.new("template", "content")
+    parse_tree = TreeNode.new("template")
     current_node = parse_tree
     tags.each do |tag|
       if is_opening_block?(tag)
-        current_node << TreeNode.new(tag, "content")
+        content = is_root_node?(current_node) ? "" : current_node.parentage.map {|p_node| p_node.name}.reverse.join("/") + "/#{current_node.name}/" + tag
+        current_node << TreeNode.new(tag, content)
         current_node = current_node[tag]
       elsif is_closing_block?(tag)
         current_node = current_node.parent
       else
-        current_node << TreeNode.new(tag, "content")
+        content = is_root_node?(current_node) ? "" : current_node.parentage.map {|p_node| p_node.name}.reverse.join("/") + "/#{current_node.name}/" + tag
+        current_node << TreeNode.new(tag, content)
       end
     end
     parse_tree
+  end
+
+  def self.is_root_node?(node)
+    node.parentage ? false : true
   end
 
   def self.get_tags(template)

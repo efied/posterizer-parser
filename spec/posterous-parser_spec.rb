@@ -22,10 +22,13 @@ describe PosterousParser do
 
   end
 
-  # it "builds a parse tree from tags" do
-  #   template = "{block:Title} {Title} {/block:Title} {block:ShowOrList} {ShortMonth} {Year} {Year} {block:TagList} {block:TagListing} {TagLink} {/block:TagListing} {/block:TagList}"
-  #   tags = PosterousParser.get_tags(template)
-  #   template_tree = PosterousParser.parse_into_tree(tags)
-  # end
+  it "builds a parse tree from tags" do
+    template = "{block:Title} {Title} {/block:Title} {block:ShowOrList} {ShortMonth} {Year} {Year} \
+    {block:TagList} {block:TagListing} {TagLink} {/block:TagListing} {/block:TagList}"
+    tags = PosterousParser.get_tags(template)
+    template_tree = PosterousParser.parse_into_tree(tags)
+    template_tree["{block:ShowOrList}"]["{block:TagList}"]["{block:TagListing}"]["{TagLink}"].name.should == "{TagLink}"
+    template_tree["{block:Title}"]["{Title}"].content.should == "template/{block:Title}/{Title}"
+  end
 
 end
