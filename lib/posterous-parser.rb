@@ -14,14 +14,14 @@ class PosterousParser
     current_node = parse_tree
     tags.each do |tag|
       if is_opening_block?(tag)
-        content = generate_node_path(current_node, tag)
-        current_node << TreeNode.new(tag, content)
+        node_content = generate_node_path(current_node, tag)
+        current_node << TreeNode.new(tag, node_content)
         current_node = current_node[tag]
       elsif is_closing_block?(tag)
         current_node = current_node.parent
       else
-        content = generate_node_path(current_node, tag)
-        current_node << TreeNode.new(tag, content)
+        node_content = generate_node_path(current_node, tag)
+        current_node << TreeNode.new(tag, node_content)
       end
     end
     parse_tree
