@@ -31,4 +31,8 @@ describe PosterousParser do
     template_tree["{block:Title}"]["{Title}"].content.should == "template/{block:Title}/{Title}"
   end
 
+  it "should replace tags in template with content from the YAML file"  do
+    pending
+  end
+
 end
