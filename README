@@ -1,4 +1,5 @@
 Basically a re-build of the posterizer template engine that uses YAML files to define template structure and variables for tag (or element in posterous-speak) substitution.
 
 ## Not Supported
+* Parameters
 * {Else} Tags
