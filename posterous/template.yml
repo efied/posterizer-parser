@@ -1,0 +1,29 @@
+---
+:global:
+  {PageTitle}: 
+  {Title}: 
+  {Description}: 
+  {Favicon}: 
+  {RSS}: 
+  {PosterousBar}: 
+  {PosterousURL}: 
+  {SiteURL}: 
+  {BlogURL}: 
+  {CurrentURL}: 
+  {PortraitURL}: 
+  {Profile}: 
+  {ProfileLink}: 
+  {ProfileExternalLinks}: 
+  {OwnerName}: 
+  {Tag}: 
+  {GlobalTagURL}: 
+  {SiteViews}: 
+  {CurrentPage}: 
+  {TotalPages}: 
+  {SearchQuery}: 
+  {SearchSort}: 
+  {PageType}: 
+  {PageTitleCssEscaped}: 
+  {TitleCssEscaped}: 
+:blocks:
+
