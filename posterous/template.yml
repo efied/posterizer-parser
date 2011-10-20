@@ -1,5 +1,5 @@
 ---
-:global:
+:ELEMENTS:
   PageTitle: 
   Title: 
   Description: 
@@ -25,5 +25,132 @@
   PageType: 
   PageTitleCssEscaped: 
   TitleCssEscaped: 
-:blocks:
+
+:BLOCKS:
+  PosterousBar: 
+  Posts:
+    :ELEMENTS:
+      Title:
+      Body:
+      PostID:
+      PostViews:
+      FavoriteCount:
+      TagsAsClasses:
+      Permalink:
+      ShortPermalink:
+      ResponseCount:
+      ResponseCountPluralized:
+      PostAuthorPortraitURL:
+      DayOfMonth:
+      DayOfMonthWithZero:
+      DayOfMonthSuffix:
+      DayOfWeek:
+      ShortDayOfWeek:
+      DayOfWeekNumber:
+      DayOfYear:
+      WeekOfYear:
+      Month:
+      ShortMonth:
+      MonthNumber:
+      MonthNumberWithZero:
+      Year:
+      ShortYear:
+      AmPm:
+      CapitalAmPm:
+      12Hour:
+      24Hour:
+      12HourWithZero:
+      24HourWithZero:
+      Minutes:
+      Seconds:
+      Timestamp:
+      TimeAgo:
+      NoteCount:
+      NoteCountWithLabel:
+      EventMap:
+    :BLOCKS:
+      Author: 
+      AuthorUser: 
+      AuthorEmail: 
+      Title: 
+      PostSummary: 
+      Text: 
+      Regular: 
+      Responses: 
+      ResponsesList: 
+      ResponsesShow: 
+      NoteCount: 
+      PostNotes: 
+      NewDayDate: 
+      SameDayDate: 
+      Private: 
+      SMS: 
+      EditBox: 
+      More: 
+      Favorite: 
+      Fans: 
+      Fan: 
+      PostLocations: 
+      PostLocation: 
+      BodyExcerpt: 
+      BodyExcerptReadMore: 
+      PostImage: 
+      Tweet: 
+      FbLike: 
+      Sharing: 
+      ViaMobile: 
+  Flash: 
+  HeaderImage: 
+  ListSidebar: 
+  List: 
+  ShowSidebar: 
+  Show: 
+  Description: 
+  Pagination: 
+  PreviousPage: 
+  NextPage: 
+  Tag: 
+  TagList: 
+  TagListing: 
+  TagListingMore: 
+  TagItem: 
+  TagItemSelected: 
+  Contributors: 
+  Contributor: 
+  ContributorMore: 
+  AutopostSites: 
+  SearchPage: 
+  Search: 
+  SearchResultMany: 
+  SearchResultNone: 
+  SearchResultOne: 
+  SearchSortBestmatch: 
+  SearchSortInteresting: 
+  SearchSortRecent: 
+  NotSearchOrTag: 
+  Subscription: 
+  SubscriptionLoading: 
+  SubscriptionSubscribed: 
+  SubscriptionUnsubscribed: 
+  SubscriptionAdmin: 
+  SubscriptionContributor: 
+  SubscriptionNonUser: 
+  SearchBox: 
+  ShowOnClick: 
+  ShowOnHover: 
+  IndexPage: 
+  HasPages: 
+  Pages: 
+  HasLinks: 
+  Links: 
+  ShowOrList: 
+  Page: 
+  Homepage: 
+  LinkCategories: 
+  Archive: 
+  HasArchives: 
+  ArchiveYear: 
+  ArchiveMonth: 
+  ArchiveList: 
+  HasAdsense: 
 
