@@ -8,6 +8,10 @@ class PosterousParser
     template_tree = parse_into_tree(tags)
   end
 
+  def self.get_tags(template)
+    template.scan /\{.*?\}/ # todo: escape the html
+  end
+
   def self.parse_into_tree(tags)
     # some sweet tree action
     parse_tree = TreeNode.new("template")
@@ -27,8 +31,12 @@ class PosterousParser
     parse_tree
   end
 
-  def self.is_root_node?(node)
-    node.parentage ? false : true
+  def self.is_opening_block?(tag)
+    tag =~ /\{block:[^\/]*?\}/ ? true : false
+  end
+
+  def self.is_closing_block?(tag)
+    tag =~ /\{\/block:.*?\}/ ? true : false
   end
 
   def self.generate_node_path(node, tag)
@@ -40,16 +48,12 @@ class PosterousParser
     end
   end
 
-  def self.get_tags(template)
-    template.scan /\{.*?\}/ # todo: escape the html
+  def self.is_root_node?(node)
+    node.parentage ? false : true
   end
 
-  def self.is_opening_block?(tag)
-    tag =~ /\{block:[^\/]*?\}/ ? true : false
-  end
-
-  def self.is_closing_block?(tag)
-    tag =~ /\{\/block:.*?\}/ ? true : false
+  def self.has_ancestor(ancestor, node)
+    node.content.split("/").include?(ancestor.name)
   end
 
 end

@@ -56,4 +56,14 @@ describe PosterousParser do
 
   end
 
+  it "checks for ancestry" do
+
+    tags = PosterousParser.get_tags(@template)
+    template_tree = PosterousParser.parse_into_tree(tags)
+    ancestor = template_tree["{block:HasPages}"]
+    element = template_tree["{block:HasPages}"]["{block:Pages}"]["{Current}"]
+    PosterousParser.has_ancestor(ancestor, element).should == true
+
+  end
+
 end
