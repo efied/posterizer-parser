@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'yaml'
 
 describe PosterousParser do
 
@@ -64,6 +65,11 @@ describe PosterousParser do
     element = template_tree["{block:HasPages}"]["{block:Pages}"]["{Current}"]
     PosterousParser.has_ancestor(ancestor, element).should == true
 
+  end
+
+  it "reads values from the template.yml" do
+    data = YAML::load(File.open(File.join("#{File.dirname(__FILE__)}", "..", "posterous", "template.yml")))
+    PosterousParser.get_value("template/{block:HasPages}/{block:Pages}/{URL}", data).should == "http://www.example.com"
   end
 
 end

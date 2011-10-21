@@ -1,8 +1,8 @@
 ---
-:ELEMENTS:
+ELEMENTS:
 
   PageTitle:
-  Title:
+  Title: "Das Kapital"
   Description:
   Favicon:
   RSS:
@@ -27,124 +27,51 @@
   PageTitleCssEscaped:
   TitleCssEscaped:
 
-:BLOCKS:
+BLOCKS:
 
   PosterousBar:
   Posts:
-    :ELEMENTS:
-      Title:
-      Body:
-      PostID:
-      PostViews:
-      FavoriteCount:
-      TagsAsClasses:
-      Permalink:
-      ShortPermalink:
-      ResponseCount:
-      ResponseCountPluralized:
-      PostAuthorPortraitURL:
-      DayOfMonth:
-      DayOfMonthWithZero:
-      DayOfMonthSuffix:
-      DayOfWeek:
-      ShortDayOfWeek:
-      DayOfWeekNumber:
-      DayOfYear:
-      WeekOfYear:
-      Month:
-      ShortMonth:
-      MonthNumber:
-      MonthNumberWithZero:
-      Year:
-      ShortYear:
-      AmPm:
-      CapitalAmPm:
-      12Hour:
-      24Hour:
-      12HourWithZero:
-      24HourWithZero:
-      Minutes:
-      Seconds:
-      Timestamp:
-      TimeAgo:
-      NoteCount:
-      NoteCountWithLabel:
-      EventMap:
-    :BLOCKS:
-      Author:
-        :ELEMENTS:
-          AuthorURL:
-          AuthorName:
-          AuthorPortraitURL:
-      AuthorUser:
-      AuthorEmail:
-      Title:
-      PostSummary:
-        :ELEMENTS:
-          PostSummary:
-      Text:
-      Regular:
-      Responses:
-        :ELEMENTS:
-          ResponseCount:
-          ResponseCountPluralized:
-          Responses:
-          ResponseWidget:
-          ResponseForm:
-      ResponsesList:
-      ResponsesShow:
-      NoteCount:
-        :ELEMENTS:
-          NoteCount:
-          NoteCountWithLabel:
-      PostNotes:
-        :ELEMENTS:
-          PostNotes:
-      NewDayDate:
-      SameDayDate:
-      Private:
-      SMS:
-      EditBox:
-        :ELEMENTS:
-          EditBoxContents:
-      More:
-      Favorite:
-      Fans:
-      Fan:
-        :ELEMENTS:
-          FanPortraitURL:
-          FanName:
-          FanProfile:
-          FanProfileLink:
-      PostLocations:
-        :ELEMENTS:
-          MapIframe:
-          LocationsSummary:
-      PostLocation:
-        :ELEMENTS:
-          Latitude:
-          Longitude:
-          FullAddress:
-          StreetAddress:
-          City:
-          State:
-          Country:
-          LocationSummary:
-      BodyExcerpt:
-        :ELEMENTS:
-          BodyExcerpt:
-      BodyExcerptReadMore:
-      PostImage:
-        :ELEMENTS:
-          PostImageURL:
-      Tweet:
-      FbLike:
-      Sharing:
-      ViaMobile:
+    Title:
+    Body:
+    PostID:
+    PostViews:
+    FavoriteCount:
+    TagsAsClasses:
+    Permalink:
+    ShortPermalink:
+    ResponseCount:
+    ResponseCountPluralized:
+    PostAuthorPortraitURL:
+    DayOfMonth:
+    DayOfMonthWithZero:
+    DayOfMonthSuffix:
+    DayOfWeek:
+    ShortDayOfWeek:
+    DayOfWeekNumber:
+    DayOfYear:
+    WeekOfYear:
+    Month:
+    ShortMonth:
+    MonthNumber:
+    MonthNumberWithZero:
+    Year:
+    ShortYear:
+    AmPm:
+    CapitalAmPm:
+    12Hour:
+    24Hour:
+    12HourWithZero:
+    24HourWithZero:
+    Minutes:
+    Seconds:
+    Timestamp:
+    TimeAgo:
+    NoteCount:
+    NoteCountWithLabel:
+    EventMap:
   Flash: ELEMENT DEPRECIATED
   HeaderImage:
-    :ELEMENTS:
-      HeaderImageURL:
+    HeaderImageURL:
   ListSidebar:
   List:
   ShowSidebar:
@@ -152,38 +79,32 @@
   Description:
   Pagination:
   PreviousPage:
-    :ELEMENTS:
-      PreviousPage:
+    PreviousPage:
   NextPage:
-    :ELEMENTS:
-      NextPage:
+    NextPage:
   Tag:
   TagList:
-    :ELEMENTS:
-      NumTags:
+    NumTags:
   TagListing:
-    :ELEMENTS:
-      TagName:
-      TagLink:
-      TagCount:
+    TagName:
+    TagLink:
+    TagCount:
   TagListingMore:
   TagItem:
   TagItemSelected:
   Contributors:
   Contributor:
-    :ELEMENTS:
-      ContributorPortraitURL:
-      ContributorName:
-      ContributorProfile:
-      ContributorProfileLink:
-      NumContributors:
+    ContributorPortraitURL:
+    ContributorName:
+    ContributorProfile:
+    ContributorProfileLink:
+    NumContributors:
   ContributorMore:
   AutopostSites:
   SearchPage:
-    :ELEMENTS:
-      SearchQuery:
-      SearchResultCount:
-      SearchSort:
+    SearchQuery:
+    SearchResultCount:
+    SearchSort:
   Search:
   SearchResultMany:
   SearchResultNone:
@@ -193,9 +114,8 @@
   SearchSortRecent:
   NotSearchOrTag:
   Subscription:
-    :ELEMENTS:
-      SubscribeLink:
-      UnsubscribeLink:
+    SubscribeLink:
+    UnsubscribeLink:
   SubscriptionLoading:
   SubscriptionSubscribed:
   SubscriptionUnsubscribed:
@@ -208,43 +128,95 @@
   IndexPage:
   HasPages:
   Pages:
-    :ELEMENTS:
-      URL:
-      Label:
-      Current:
-      External:
-      Home:
+    URL: "http://www.example.com"
+    Label:
+    Current:
+    External:
+    Home:
   HasLinks:
   Links:
-    :ELEMENTS:
-      URL:
-      Label:
+    URL:
+    Label:
   ShowOrList:
   Page:
   Homepage:
   LinkCategories:
-    :ELEMENTS:
-      Label:
-      ID:
+    Label:
+    ID:
   Archive:
-    :ELEMENTS:
-      ArchiveMonth:
-      ArchiveCount:
-      ArchiveLink:
+    ArchiveMonth:
+    ArchiveCount:
+    ArchiveLink:
   HasArchives:
   ArchiveYear:
-    :ELEMENTS:
-      ArchiveDateYear:
-      ArchiveYearCount:
-      ArchiveYearId:
-      ArchiveMonthsId:
+    ArchiveDateYear:
+    ArchiveYearCount:
+    ArchiveYearId:
+    ArchiveMonthsId:
   ArchiveMonth:
-    :ELEMENTS:
-      ArchiveDate:
-      ArchiveMonthCount:
-      ArchiveMonthLink:
+    ArchiveDate:
+    ArchiveMonthCount:
+    ArchiveMonthLink:
   ArchiveList:
-    :ELEMENTS:
-      ArchiveDate:
+    ArchiveDate:
   HasAdsense:
+  Author:
+    AuthorURL:
+    AuthorName:
+    AuthorPortraitURL:
+  AuthorUser:
+  AuthorEmail:
+  Title:
+  PostSummary:
+    PostSummary:
+  Text:
+  Regular:
+  Responses:
+    ResponseCount:
+    ResponseCountPluralized:
+    Responses:
+    ResponseWidget:
+    ResponseForm:
+  ResponsesList:
+  ResponsesShow:
+  NoteCount:
+    NoteCount:
+    NoteCountWithLabel:
+  PostNotes:
+    PostNotes:
+  NewDayDate:
+  SameDayDate:
+  Private:
+  SMS:
+  EditBox:
+    EditBoxContents:
+  More:
+  Favorite:
+  Fans:
+  Fan:
+    FanPortraitURL:
+    FanName:
+    FanProfile:
+    FanProfileLink:
+  PostLocations:
+    MapIframe:
+    LocationsSummary:
+  PostLocation:
+    Latitude:
+    Longitude:
+    FullAddress:
+    StreetAddress:
+    City:
+    State:
+    Country:
+    LocationSummary:
+  BodyExcerpt:
+    BodyExcerpt:
+  BodyExcerptReadMore:
+  PostImage:
+    PostImageURL:
+  Tweet:
+  FbLike:
+  Sharing:
+  ViaMobile:
 
