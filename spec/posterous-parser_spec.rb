@@ -49,6 +49,15 @@ describe PosterousParser do
 
   end
 
+  it "cleans up posterous tag syntax returns just the tag contents" do
+
+    # we're only testing for opening blocks and elements
+    PosterousParser.clean_me("{block:Posts}").should == "Posts"
+    PosterousParser.clean_me("{Element}").should == "Element"
+    PosterousParser.clean_me("template/{HasPages}/{Pages}/{URL}").should == "HasPages/Pages/URL"
+
+  end
+
   it "builds a parse tree from tags" do
 
     template_tree = PosterousParser.parse_into_tree(PosterousParser.get_tags(template))
@@ -67,8 +76,10 @@ describe PosterousParser do
   # end
 
   # it "reads values from the template.yml" do
+  #
   #   data = YAML::load(File.open(File.join("#{File.dirname(__FILE__)}", "..", "posterous", "template.yml")))
   #   PosterousParser.get_value("template/HasPages/Pages/URL", data).should == "http://www.example.com"
+  #
   # end
 
 end

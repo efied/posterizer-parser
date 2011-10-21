@@ -59,7 +59,12 @@ class PosterousParser
   # end
 
   def self.clean_me(me)
-    me.gsub!("{","").gsub!("}","").gsub!("block:","").gsub!("template/", "")
+    # this function is only meant to be used in the context of node URIs
+    # (which never contain closing or single blocks)
+    me.gsub!("template/", "")
+    me.gsub!("block:","")
+    me.gsub!("{","")
+    me.gsub!("}","")
     return me
   end
 
