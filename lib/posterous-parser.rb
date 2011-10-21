@@ -6,6 +6,7 @@ class PosterousParser
   def self.parse(template)
     tags = get_tags(template)
     template_tree = parse_into_tree(tags)
+    template_tree.print_tree
   end
 
   def self.get_tags(template)
@@ -54,9 +55,9 @@ class PosterousParser
     node.parentage ? false : true
   end
 
-  def self.has_ancestor(ancestor, node)
-    node.content.split("/").include?(ancestor.name)
-  end
+  # def self.has_ancestor?(ancestor, node)
+  #   node.content.split("/").include?("#{ancestor.name}")
+  # end
 
   def self.get_value(uri, data)
     locator = uri.split("/")
@@ -66,11 +67,11 @@ class PosterousParser
       locator = locator[-2..-1]
       locator.insert(0, 'BLOCKS')
     end
-    @content = data
+    content = data
     locator.each do |key|
-      @content = @content[key]
+      content = content[key]
     end
-    @content
+    content
   end
 
 end
