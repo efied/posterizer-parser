@@ -46,8 +46,7 @@ class PosterousParser
     else
       # create the parentage string in a path format
       uri = node.parentage.map {|p_node| p_node.name}.reverse.join("/") + "/#{node.name}/#{tag}"
-      uri.gsub!("template/","").gsub!("block:","").gsub!("{","").gsub!("}","")
-      return uri
+      return clean_me(uri)
     end
   end
 
@@ -56,22 +55,27 @@ class PosterousParser
   end
 
   # def self.has_ancestor?(ancestor, node)
-  #   node.content.split("/").include?("#{ancestor.name}")
+  #   node.content.split("/").include?(clean_me(ancestor.name))
   # end
 
-  def self.get_value(uri, data)
-    locator = uri.split("/")
-    if locator.length == 1
-      locator.insert(0, 'ELEMENTS')
-    else
-      locator = locator[-2..-1]
-      locator.insert(0, 'BLOCKS')
-    end
-    content = data
-    locator.each do |key|
-      content = content[key]
-    end
-    content
+  def self.clean_me(me)
+    me.gsub!("{","").gsub!("}","").gsub!("block:","").gsub!("template/", "")
+    return me
   end
+
+  # def self.get_value(uri, data)
+  #   locator = uri.split("/")
+  #   if locator.length == 1
+  #     locator.insert(0, 'ELEMENTS')
+  #   else
+  #     locator = locator[-2..-1]
+  #     locator.insert(0, 'BLOCKS')
+  #   end
+  #   content = data
+  #   locator.each do |key|
+  #     content = content[key]
+  #   end
+  #   content
+  # end
 
 end

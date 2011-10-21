@@ -66,9 +66,9 @@ describe PosterousParser do
 
   # end
 
-  it "reads values from the template.yml" do
-    data = YAML::load(File.open(File.join("#{File.dirname(__FILE__)}", "..", "posterous", "template.yml")))
-    PosterousParser.get_value("template/HasPages/Pages/URL", data).should == "http://www.example.com"
-  end
+  # it "reads values from the template.yml" do
+  #   data = YAML::load(File.open(File.join("#{File.dirname(__FILE__)}", "..", "posterous", "template.yml")))
+  #   PosterousParser.get_value("template/HasPages/Pages/URL", data).should == "http://www.example.com"
+  # end
 
 end
