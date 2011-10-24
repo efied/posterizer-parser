@@ -18,6 +18,7 @@ class PosterousParser
     parse_tree = TreeNode.new("template")
     current_node = parse_tree
     tags.each do |tag|
+      tag.gsub!(/\{(.*)\s.*\}/, '{\1}')
       if is_opening_block?(tag)
         node_content = generate_node_path(current_node, tag)
         current_node << TreeNode.new(tag, node_content)
@@ -66,6 +67,11 @@ class PosterousParser
     me.gsub!("{","")
     me.gsub!("}","")
     return me
+  end
+
+  def self.remove_params(tag)
+    tag.gsub!(/\{(.*)\s.*\}/, '{\1}')
+    tag
   end
 
   # def self.get_value(uri, data)

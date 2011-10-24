@@ -66,6 +66,11 @@ describe PosterousParser do
 
   end
 
+  it "strips parameters from tags" do
+    clean_tag = PosterousParser.remove_params("{block:PostLocation uniq_by='summary'}")
+    clean_tag.should == "{block:PostLocation}"
+  end
+
   # it "checks for ancestry" do
 
   #   template_tree = PosterousParser.parse_into_tree(PosterousParser.get_tags(template))
