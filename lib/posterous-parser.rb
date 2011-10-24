@@ -44,7 +44,7 @@ class PosterousParser
     if is_root_node?(node)
       return ""
     else
-      # create the parentage string in a path format
+      # create the parentage string uri style
       uri = node.parentage.map {|p_node| p_node.name}.reverse.join("/") + "/#{node.name}/#{tag}"
       return clean_me(uri)
     end
